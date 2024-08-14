@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DevOps Project</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .response {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<nav>
+    <select id="jobOperationsSelect">
+        <option value="" disabled selected>Jobs Operations</option>
+        <option value="#createJob">Create Job</option>
+        <option value="#getJob">Get Job by ID</option>
+        <option value="#updateJob">Update Job</option>
+        <option value="#deleteJob">Delete Job</option>
+        <option value="#getJobsByStatus">Get Jobs by Status</option>
+        <option value="#getJobsByType">Get Jobs by Job Type</option>
+        <option value="#getJobsByDateRange">Get Jobs by Date Range</option>
+    </select>
+</nav>
+
+<div class="container details-container">
+    <h1>DevOps Final Project</h1>
+
+    <!-- Students Information -->
+    <div class="details-section">
+        <h3>Authors:</h3>
+        <p>
+            <strong class="name">Avichai Gal-Or</strong> | 207090898 | avichai504@gmail.com<br>
+            <strong class="name">Ofek Atun</strong> | 382930492 | ofek.atun14@gmail.com
+        </p>
+    </div>
+
+    <!-- Course Information -->
+    <div class="details-section">
+        <h3>Course Information:</h3>
+        <p>
+            Course: DevOps 2024 תשפ"ד<br>
+            Institution: HIT, Semester B<br>
+            Instructor: Nathan Dillbary
+        </p>
+    </div>
+
+    <!-- Project Summary -->
+    <div class="details-section">
+        <h3>Project Summary:</h3>
+        <p>
+            This project is a DevOps solution that integrates a Spring Boot application, Python tests, and Docker-based orchestration. It demonstrates CI/CD automation, automated testing, and containerization.
+        </p>
+
+        <h4>Part 1: CI/CD Automation Server</h4>
+        <p>
+            A Spring Boot application acts as a CI/CD automation server, managing CI/CD jobs. It uses Spring Data JPA, H2 Database, and Lombok. The server provides RESTful endpoints for CRUD operations on CI/CD jobs. Key technologies include:
+        </p>
+        <ul>
+            <li><strong>Spring Boot</strong> - Core framework</li>
+            <li><strong>H2 Database</strong> - In-memory data storage</li>
+            <li><strong>Spring Data JPA</strong> - Database interactions</li>
+            <li><strong>Lombok</strong> - Boilerplate code reduction</li>
+            <li><strong>JUnit</strong> - Unit and integration testing</li>
+        </ul>
+
+        <h5>CI/CD Job Endpoints:</h5>
+        <ul>
+            <li><strong>POST /api/jobs</strong> - Create a new CI/CD job.</li>
+            <li><strong>GET /api/jobs/{id}</strong> - Retrieve a CI/CD job by ID.</li>
+            <li><strong>PUT /api/jobs/{id}</strong> - Update an existing CI/CD job.</li>
+            <li><strong>DELETE /api/jobs/{id}</strong> - Delete a CI/CD job by ID.</li>
+            <li><strong>GET /api/jobs/status/{status}</strong> - Retrieve jobs by status.</li>
+            <li><strong>GET /api/jobs/jobType/{jobType}</strong> - Retrieve jobs by job type.</li>
+            <li><strong>GET /api/jobs/date-range</strong> - Retrieve jobs within a date range.</li>
+        </ul>
+
+        <h4>Part 2: Python Test Suite</h4>
+        <p>
+            Python-based integration tests validate the CI/CD server's endpoints. Tests are designed using `pytest` with fixtures for setup/teardown and include logging for detailed output. The suite covers all major CRUD operations on jobs.
+        </p>
+        <ul>
+            <li><strong>pytest</strong> - Test framework</li>
+            <li><strong>Logging</strong> - Detailed test output</li>
+        </ul>
+
+        <h4>Part 3: Docker-Based Deployment</h4>
+        <p>
+            The application and tests are containerized using Docker. Docker Compose manages the multi-container setup, including the Spring Boot server, PostgreSQL, Redis, and the Python testing service. This part demonstrates container orchestration.
+        </p>
+        <ul>
+            <li><strong>Docker</strong> - Containerization</li>
+            <li><strong>Docker Compose</strong> - Multi-container orchestration</li>
+            <li><strong>Play with Docker</strong> - Deployment environment</li>
+        </ul>
+    </div>
+</div>
+
+<div class="container">
+    <!-- Job Operations -->
+    <div class="form-section" id="jobOperations">
+        <h2 id="jobOperationsTitle">CRUD Operations for CI/CD Jobs</h2>
+
+        <div class="form-container" id="createJob">
+            <h3>Create CI/CD Job</h3>
+            <form id="createJobForm">
+                <input type="text" name="jobName" placeholder="Job Name" value="Test Build" required>
+                <input type="text" name="status" placeholder="Status" value="SUCCESS" required>
+                <input type="text" name="jobType" placeholder="Job Type" value="BUILD" required>
+                <button type="submit">Create Job</button>
+                <div id="createJobResponse" class="response"></div>
+            </form>
+        </div>
+
+        <div class="form-container" id="getJob">
+            <h3>Get Job by ID</h3>
+            <form id="getJobForm">
+                <input type="number" name="id" placeholder="Job ID" value="1" required>
+                <button type="submit">Get Job</button>
+                <div id="getJobResponse" class="response"></div>
+            </form>
+        </div>
+
+        <div class="form-container" id="updateJob">
+            <h3>Update Job</h3>
+            <form id="updateJobForm">
+                <input type="number" name="id" placeholder="Job ID" value="1" required>
+                <input type="text" name="jobName" placeholder="Job Name" value="Deploy App" required>
+                <input type="text" name="status" placeholder="Status" value="PENDING" required>
+                <input type="text" name="jobType" placeholder="Job Type" value="DEPLOY" required>
+                <button type="submit">Update Job</button>
+                <div id="updateJobResponse" class="response"></div>
+            </form>
+        </div>
+
+        <div class="form-container" id="deleteJob">
+            <h3>Delete Job</h3>
+            <form id="deleteJobForm">
+                <input type="number" name="id" placeholder="Job ID" value="1" required>
+                <button type="submit">Delete Job</button>
+                <div id="deleteJobResponse" class="response"></div>
+            </form>
+        </div>
+
+        <div class="form-container" id="getJobsByStatus">
+            <h3>Get Jobs by Status</h3>
+            <form id="getJobsByStatusForm">
+                <input type="text" name="status" placeholder="Status" value="SUCCESS" required>
+                <button type="submit">Get Jobs</button>
+                <div id="getJobsByStatusResponse" class="response"></div>
+            </form>
+        </div>
+
+        <div class="form-container" id="getJobsByType">
+            <h3>Get Jobs by Job Type</h3>
+            <form id="getJobsByTypeForm">
+                <input type="text" name="jobType" placeholder="Job Type" value="BUILD" required>
+                <button type="submit">Get Jobs</button>
+                <div id="getJobsByTypeResponse" class="response"></div>
+            </form>
+        </div>
+
+        <div class="form-container" id="getJobsByDateRange">
+            <h3>Get Jobs by Date Range</h3>
+            <form id="getJobsByDateRangeForm">
+                <input type="datetime-local" name="startDate" value="2024-08-01T00:00">
+                <input type="datetime-local" name="endDate" value="2024-08-13T23:59">
+                <button type="submit">Get Jobs</button>
+                <div id="getJobsByDateRangeResponse" class="response"></div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
