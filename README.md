@@ -1,7 +1,7 @@
 # Final Project: CI/CD Pipeline Management System
 
-![img.png](img.png)
-![img_1.png](img_1.png)
+![img.png](src/static/img.png)
+![img_1.png](src/static/img_1.png)
 ## Introduction
 This project is a comprehensive CI/CD (Continuous Integration and Continuous Deployment) pipeline management system built using Spring Boot. The system allows developers and DevOps engineers to manage and monitor CI/CD jobs, including creating, updating, deleting, and retrieving job statuses.
 
