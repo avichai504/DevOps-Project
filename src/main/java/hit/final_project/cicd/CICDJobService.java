@@ -1,19 +1,19 @@
 // src/main/java/hit/final_project/cicd/CICDJobService.java
+
 package hit.final_project.cicd;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import hit.final_project.dto.CICDJobDTO;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
 
-@Service  // Mark as a Service component, allowing SpringBoot to INJECT the dependency automatically
+@Service
 public class CICDJobService {
 
     private final CICDJobRepository cicdJobRepository;
 
-    @Autowired
     public CICDJobService(CICDJobRepository cicdJobRepository) {
         this.cicdJobRepository = cicdJobRepository;
     }
@@ -26,28 +26,29 @@ public class CICDJobService {
         return cicdJobRepository.findById(id);
     }
 
-    public CICDJob createJob(CICDJob job) {
-        job.setCreatedAt(LocalDateTime.now());
-        job.setUpdatedAt(LocalDateTime.now());
-        return cicdJobRepository.save(job);
+    public CICDJob createJob(CICDJobDTO cicdJobDTO) {
+        CICDJob cicdJob = new CICDJob();
+        cicdJob.setJobName(cicdJobDTO.getJobName());
+        cicdJob.setStatus(cicdJobDTO.getStatus());
+        cicdJob.setJobType(cicdJobDTO.getJobType());
+        // Set other fields if necessary
+        return cicdJobRepository.save(cicdJob);
     }
 
-    public CICDJob updateJob(Long id, CICDJob jobDetails) {
-        CICDJob job = cicdJobRepository.findById(id)
-                .orElseThrow(() -> new RuntimeException("Job not found with ID: " + id));
-        job.setJobName(jobDetails.getJobName());
-        job.setStatus(jobDetails.getStatus());
-        job.setJobType(jobDetails.getJobType());
-        job.setUpdatedAt(LocalDateTime.now());
-        return cicdJobRepository.save(job);
+    public CICDJob updateJob(Long id, CICDJobDTO cicdJobDTO) {
+        CICDJob cicdJob = cicdJobRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Job not found"));
+        cicdJob.setJobName(cicdJobDTO.getJobName());
+        cicdJob.setStatus(cicdJobDTO.getStatus());
+        cicdJob.setJobType(cicdJobDTO.getJobType());
+        // Update other fields if necessary
+        return cicdJobRepository.save(cicdJob);
     }
 
     public void deleteJob(Long id) {
-        if (cicdJobRepository.existsById(id)) {
-            cicdJobRepository.deleteById(id);
-        } else {
-            throw new RuntimeException("Job not found with ID: " + id);
-        }
+        CICDJob cicdJob = cicdJobRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Job not found"));
+        cicdJobRepository.delete(cicdJob);
     }
 
     public List<CICDJob> getJobsByStatus(String status) {

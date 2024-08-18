@@ -1,7 +1,10 @@
 // src/main/java/hit/final_project/cicd/CICDJobController.java
+
 package hit.final_project.cicd;
 
+import hit.final_project.dto.CICDJobDTO;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -25,8 +28,9 @@ public class CICDJobController {
     }
 
     @PostMapping
-    public ResponseEntity<CICDJob> createJob(@RequestBody CICDJob job) {
-        return ResponseEntity.ok(cicdJobService.createJob(job));
+    public ResponseEntity<CICDJob> createJob(@RequestBody CICDJobDTO jobDTO) {
+        CICDJob newJob = cicdJobService.createJob(jobDTO);
+        return new ResponseEntity<>(newJob, HttpStatus.CREATED);
     }
 
     @GetMapping("/{id}")
@@ -37,12 +41,12 @@ public class CICDJobController {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<CICDJob> updateJob(@PathVariable Long id, @RequestBody CICDJob jobDetails) {
+    public ResponseEntity<CICDJob> updateJob(@PathVariable Long id, @RequestBody CICDJobDTO jobDTO) {
         try {
-            CICDJob updatedJob = cicdJobService.updateJob(id, jobDetails);
+            CICDJob updatedJob = cicdJobService.updateJob(id, jobDTO);
             return ResponseEntity.ok(updatedJob);
         } catch (RuntimeException e) {
-            return ResponseEntity.notFound().build();  // Returns 404 if the job is not found
+            return ResponseEntity.notFound().build();
         }
     }
 
@@ -50,9 +54,9 @@ public class CICDJobController {
     public ResponseEntity<Void> deleteJob(@PathVariable Long id) {
         try {
             cicdJobService.deleteJob(id);
-            return ResponseEntity.noContent().build();  // Returns 204 No Content on successful deletion
+            return ResponseEntity.noContent().build();
         } catch (RuntimeException e) {
-            return ResponseEntity.notFound().build();  // Returns 404 Not Found if the job does not exist
+            return ResponseEntity.notFound().build();
         }
     }
 
