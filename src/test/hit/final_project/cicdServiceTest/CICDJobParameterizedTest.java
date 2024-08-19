@@ -53,6 +53,11 @@ class CICDJobParameterizedTest {
         cicdJobDTO.setStatus(status);
         cicdJobDTO.setJobType(jobType);
 
+        CICDJob cicdJob = new CICDJob();
+        cicdJob.setJobName(cicdJobDTO.getJobName());
+        cicdJob.setStatus(cicdJobDTO.getStatus());
+        cicdJob.setJobType(cicdJobDTO.getJobType());
+
         when(cicdJobRepository.save(any(CICDJob.class))).thenReturn(cicdJob);
 
         CICDJob createdJob = cicdJobService.createJob(cicdJobDTO);
@@ -62,6 +67,7 @@ class CICDJobParameterizedTest {
         assertEquals(status, createdJob.getStatus());
         assertEquals(jobType, createdJob.getJobType());
     }
+
 
     @ParameterizedTest
     @CsvSource({
@@ -75,9 +81,9 @@ class CICDJobParameterizedTest {
 
         when(cicdJobRepository.findById(id)).thenReturn(Optional.of(cicdJob));
 
-        Optional<CICDJob> retrievedJob = cicdJobService.getJobById(id);
+        CICDJob retrievedJob = cicdJobService.getJobById(id);
 
-        assertTrue(retrievedJob.isPresent());
-        assertEquals(expectedJobName, retrievedJob.get().getJobName());
+        assertNotNull(retrievedJob);
+        assertEquals(expectedJobName, retrievedJob.getJobName());
     }
 }

@@ -61,11 +61,12 @@ class CICDJobTest {
     void testGetJob() {
         when(cicdJobRepository.findById(1L)).thenReturn(Optional.of(cicdJob));
 
-        Optional<CICDJob> retrievedJob = cicdJobService.getJobById(1L);
+        CICDJob retrievedJob = cicdJobService.getJobById(1L);
 
-        assertTrue(retrievedJob.isPresent());
-        assertEquals("Test Job", retrievedJob.get().getJobName());
+        assertNotNull(retrievedJob);
+        assertEquals("Test Job", retrievedJob.getJobName());
     }
+
 
     @Test
     void testUpdateJob() {

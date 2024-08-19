@@ -21,9 +21,9 @@ import java.util.List;
 import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.when;
-import static uk.org.lidalia.slf4jtest.LoggingEvent.info;
 
 @ExtendWith({SpringExtension.class, MockitoExtension.class})
 @SpringBootTest
@@ -35,7 +35,7 @@ class CICDJobLoggingTest {
     @InjectMocks
     private CICDJobService cicdJobService;
 
-    private final TestLogger testLogger = TestLoggerFactory.getTestLogger(CICDJob.class);
+    private final TestLogger testLogger = TestLoggerFactory.getTestLogger(CICDJobService.class);
 
     private CICDJobDTO cicdJobDTO;
 
@@ -55,13 +55,14 @@ class CICDJobLoggingTest {
     void testLogWhenJobCreated() {
         CICDJob cicdJob = new CICDJob();
         cicdJob.setJobName("Build Project");
+
         when(cicdJobRepository.save(any(CICDJob.class))).thenReturn(cicdJob);
 
-        cicdJobService.createJob(cicdJobDTO);
+        CICDJob savedJob = cicdJobService.createJob(cicdJobDTO);
 
         List<LoggingEvent> loggingEvents = testLogger.getLoggingEvents();
         assertEquals(1, loggingEvents.size());
-        assertEquals(info("CICD Job has been created: Build Project"), loggingEvents.get(1).getMessage());
+        assertEquals("CICD Job has been created: Build Project", loggingEvents.get(0).getMessage());
     }
 
     @Test
@@ -74,6 +75,17 @@ class CICDJobLoggingTest {
 
         List<LoggingEvent> loggingEvents = testLogger.getLoggingEvents();
         assertEquals(1, loggingEvents.size());
-        assertEquals(info("CICD Job has been created: Deploy Project"), loggingEvents.get(1).getMessage());
+        assertEquals("Retrieved job with ID 1", loggingEvents.get(0).getMessage());
+    }
+
+    @Test
+    void testLogWhenJobNotFound() {
+        when(cicdJobRepository.findById(1L)).thenReturn(Optional.empty());
+
+        assertThrows(RuntimeException.class, () -> cicdJobService.getJobById(1L));
+
+        List<LoggingEvent> loggingEvents = testLogger.getLoggingEvents();
+        assertEquals(1, loggingEvents.size());
+        assertEquals("Job not found with ID 1", loggingEvents.get(0).getMessage());
     }
 }

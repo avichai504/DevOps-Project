@@ -67,10 +67,17 @@ class CICDJobNestedTest {
         void testGetJob() {
             when(cicdJobRepository.findById(1L)).thenReturn(Optional.of(cicdJob));
 
-            Optional<CICDJob> retrievedJob = cicdJobService.getJobById(1L);
+            CICDJob retrievedJob = cicdJobService.getJobById(1L);
 
-            assertTrue(retrievedJob.isPresent());
-            assertEquals("Test Job", retrievedJob.get().getJobName());
+            assertNotNull(retrievedJob);
+            assertEquals("Test Job", retrievedJob.getJobName());
+        }
+
+        @Test
+        void testGetJobNotFound() {
+            when(cicdJobRepository.findById(1L)).thenReturn(Optional.empty());
+
+            assertThrows(RuntimeException.class, () -> cicdJobService.getJobById(1L));
         }
     }
 

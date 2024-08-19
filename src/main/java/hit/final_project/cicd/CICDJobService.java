@@ -1,17 +1,18 @@
-
 package hit.final_project.cicd;
 
 import hit.final_project.dto.CICDJobDTO;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
 import java.util.List;
-import java.util.Optional;
 
 @Service
 public class CICDJobService {
 
     private final CICDJobRepository cicdJobRepository;
+    private static final Logger logger = LoggerFactory.getLogger(CICDJobService.class);
 
     public CICDJobService(CICDJobRepository cicdJobRepository) {
         this.cicdJobRepository = cicdJobRepository;
@@ -21,8 +22,12 @@ public class CICDJobService {
         return cicdJobRepository.findAll();
     }
 
-    public Optional<CICDJob> getJobById(Long id) {
-        return cicdJobRepository.findById(id);
+    public CICDJob getJobById(Long id) {
+        return cicdJobRepository.findById(id)
+                .orElseThrow(() -> {
+                    logger.info("Job not found with ID {}", id);
+                    return new RuntimeException("Job not found");
+                });
     }
 
     public CICDJob createJob(CICDJobDTO cicdJobDTO) {
@@ -32,12 +37,18 @@ public class CICDJobService {
         cicdJob.setJobType(cicdJobDTO.getJobType());
         cicdJob.setCreatedAt(LocalDateTime.now());
         cicdJob.setUpdatedAt(LocalDateTime.now());
-        return cicdJobRepository.save(cicdJob);
+
+        CICDJob savedJob = cicdJobRepository.save(cicdJob);
+        logger.info("CICD Job has been created: {}", savedJob.getJobName());
+        return savedJob;
     }
 
     public CICDJob updateJob(Long id, CICDJobDTO cicdJobDTO) {
         CICDJob cicdJob = cicdJobRepository.findById(id)
-                .orElseThrow(() -> new RuntimeException("Job not found"));
+                .orElseThrow(() -> {
+                    logger.info("Job not found with ID {}", id);
+                    return new RuntimeException("Job not found");
+                });
         cicdJob.setJobName(cicdJobDTO.getJobName());
         cicdJob.setStatus(cicdJobDTO.getStatus());
         cicdJob.setJobType(cicdJobDTO.getJobType());
@@ -47,8 +58,12 @@ public class CICDJobService {
 
     public void deleteJob(Long id) {
         CICDJob cicdJob = cicdJobRepository.findById(id)
-                .orElseThrow(() -> new RuntimeException("Job not found"));
+                .orElseThrow(() -> {
+                    logger.info("Job not found with ID {}", id);
+                    return new RuntimeException("Job not found");
+                });
         cicdJobRepository.delete(cicdJob);
+        logger.info("CICD Job with ID {} has been deleted", id);
     }
 
     public List<CICDJob> getJobsByStatus(String status) {

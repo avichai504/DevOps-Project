@@ -33,10 +33,10 @@ public class CICDJobController {
 
     @GetMapping("/{id}")
     public ResponseEntity<CICDJob> getJobById(@PathVariable Long id) {
-        return cicdJobService.getJobById(id)
-                .map(ResponseEntity::ok)
-                .orElse(ResponseEntity.notFound().build());
+        CICDJob cicdJob = cicdJobService.getJobById(id);
+        return ResponseEntity.ok(cicdJob);
     }
+
 
     @PutMapping("/{id}")
     public ResponseEntity<CICDJob> updateJob(@PathVariable Long id, @RequestBody CICDJobDTO jobDTO) {
