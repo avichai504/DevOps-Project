@@ -1,4 +1,3 @@
-// src/main/java/hit/final_project/config/DatabaseSeeder.java
 package hit.final_project.config;
 
 import hit.final_project.cicd.CICDJob;

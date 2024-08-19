@@ -1,4 +1,3 @@
-// src/main/java/hit/final_project/cicd/CICDJobService.java
 
 package hit.final_project.cicd;
 
@@ -31,7 +30,8 @@ public class CICDJobService {
         cicdJob.setJobName(cicdJobDTO.getJobName());
         cicdJob.setStatus(cicdJobDTO.getStatus());
         cicdJob.setJobType(cicdJobDTO.getJobType());
-        // Set other fields if necessary
+        cicdJob.setCreatedAt(LocalDateTime.now());
+        cicdJob.setUpdatedAt(LocalDateTime.now());
         return cicdJobRepository.save(cicdJob);
     }
 
@@ -41,7 +41,7 @@ public class CICDJobService {
         cicdJob.setJobName(cicdJobDTO.getJobName());
         cicdJob.setStatus(cicdJobDTO.getStatus());
         cicdJob.setJobType(cicdJobDTO.getJobType());
-        // Update other fields if necessary
+        cicdJob.setUpdatedAt(LocalDateTime.now());
         return cicdJobRepository.save(cicdJob);
     }
 

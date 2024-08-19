@@ -1,4 +1,3 @@
-// src/main/java/hit/final_project/cicd/CICDJob.java
 package hit.final_project.cicd;
 
 import jakarta.persistence.*;

@@ -1,5 +1,3 @@
-// src/main/java/hit/final_project/cicd/CICDJobController.java
-
 package hit.final_project.cicd;
 
 import hit.final_project.dto.CICDJobDTO;

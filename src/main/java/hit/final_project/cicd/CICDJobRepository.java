@@ -1,4 +1,3 @@
-// src/main/java/hit/final_project/CICDJobRepository.java
 package hit.final_project.cicd;
 
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -11,5 +10,5 @@ import java.util.List;
 public interface CICDJobRepository extends JpaRepository<CICDJob, Long> {
     List<CICDJob> findByStatus(String status);
     List<CICDJob> findByJobType(String jobType);
-    List<CICDJob> findByCreatedAtBetween(LocalDateTime startDate, LocalDateTime endDate); // Or use updatedAt if needed
+    List<CICDJob> findByCreatedAtBetween(LocalDateTime startDate, LocalDateTime endDate);
 }
