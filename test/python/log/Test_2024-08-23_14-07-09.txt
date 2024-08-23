@@ -1,0 +1,490 @@
+2024-08-23 14:07:09,197 - INFO - Global flag DELETE_ALL_JOBS is set to False. No jobs will be deleted.
+2024-08-23 14:07:09,363 - INFO - Global flag DELETE_ALL_JOBS is set to False. No jobs will be deleted.
+2024-08-23 14:07:09,389 - INFO - 
+======================================================================
+2024-08-23 14:07:09,391 - INFO - Request GET to http://localhost:8080/api/jobs
+2024-08-23 14:07:09,392 - INFO - Response Status Code: 200
+2024-08-23 14:07:09,395 - INFO - Response Body:
+[
+    {
+        "id": 21,
+        "jobName": "Test Job",
+        "status": "Running",
+        "createdAt": "2024-08-23T13:40:29.884789",
+        "updatedAt": "2024-08-23T13:40:29.894762",
+        "jobType": "Build"
+    },
+    {
+        "id": 23,
+        "jobName": "Test Job",
+        "status": "PENDING",
+        "createdAt": "2024-08-23T13:40:57.939184",
+        "updatedAt": "2024-08-23T13:40:57.939184",
+        "jobType": "Build"
+    },
+    {
+        "id": 24,
+        "jobName": "Another Test Job",
+        "status": "PENDING",
+        "createdAt": "2024-08-23T13:40:57.957135",
+        "updatedAt": "2024-08-23T13:40:57.957135",
+        "jobType": "Deployment"
+    },
+    {
+        "id": 25,
+        "jobName": "Test Job",
+        "status": "Running",
+        "createdAt": "2024-08-23T13:40:57.966116",
+        "updatedAt": "2024-08-23T13:40:57.976086",
+        "jobType": "Build"
+    },
+    {
+        "id": 27,
+        "jobName": "Test Job",
+        "status": "PENDING",
+        "createdAt": "2024-08-23T13:42:14.903342",
+        "updatedAt": "2024-08-23T13:42:14.903342",
+        "jobType": "Build"
+    },
+    {
+        "id": 28,
+        "jobName": "Another Test Job",
+        "status": "PENDING",
+        "createdAt": "2024-08-23T13:42:14.941237",
+        "updatedAt": "2024-08-23T13:42:14.941237",
+        "jobType": "Deployment"
+    },
+    {
+        "id": 29,
+        "jobName": "Test Job",
+        "status": "Running",
+        "createdAt": "2024-08-23T13:42:14.95919",
+        "updatedAt": "2024-08-23T13:42:14.979136",
+        "jobType": "Build"
+    },
+    {
+        "id": 31,
+        "jobName": "Test Job",
+        "status": "PENDING",
+        "createdAt": "2024-08-23T13:43:30.309725",
+        "updatedAt": "2024-08-23T13:43:30.309725",
+        "jobType": "Build"
+    },
+    {
+        "id": 32,
+        "jobName": "Another Test Job",
+        "status": "PENDING",
+        "createdAt": "2024-08-23T13:43:30.326678",
+        "updatedAt": "2024-08-23T13:43:30.326678",
+        "jobType": "Deployment"
+    },
+    {
+        "id": 33,
+        "jobName": "Test Job",
+        "status": "PENDING",
+        "createdAt": "2024-08-23T13:43:30.341638",
+        "updatedAt": "2024-08-23T13:43:30.341638",
+        "jobType": "Build"
+    },
+    {
+        "id": 34,
+        "jobName": "Test Job",
+        "status": "PENDING",
+        "createdAt": "2024-08-23T13:43:30.358593",
+        "updatedAt": "2024-08-23T13:43:30.358593",
+        "jobType": "Build"
+    },
+    {
+        "id": 35,
+        "jobName": "Test Job",
+        "status": "PENDING",
+        "createdAt": "2024-08-23T13:43:35.005163",
+        "updatedAt": "2024-08-23T13:43:35.005163",
+        "jobType": "Build"
+    },
+    {
+        "id": 36,
+        "jobName": "Another Test Job",
+        "status": "PENDING",
+        "createdAt": "2024-08-23T13:43:35.041067",
+        "updatedAt": "2024-08-23T13:43:35.041067",
+        "jobType": "Deployment"
+    },
+    {
+        "id": 37,
+        "jobName": "Test Job",
+        "status": "Running",
+        "createdAt": "2024-08-23T13:43:35.059019",
+        "updatedAt": "2024-08-23T13:43:35.077967",
+        "jobType": "Build"
+    },
+    {
+        "id": 39,
+        "jobName": "Test Job",
+        "status": "PENDING",
+        "createdAt": "2024-08-23T13:45:38.623078",
+        "updatedAt": "2024-08-23T13:45:38.623078",
+        "jobType": "Build"
+    },
+    {
+        "id": 40,
+        "jobName": "Another Test Job",
+        "status": "PENDING",
+        "createdAt": "2024-08-23T13:45:38.657983",
+        "updatedAt": "2024-08-23T13:45:38.657983",
+        "jobType": "Deployment"
+    },
+    {
+        "id": 41,
+        "jobName": "Test Job",
+        "status": "Running",
+        "createdAt": "2024-08-23T13:45:38.675937",
+        "updatedAt": "2024-08-23T13:45:38.69389",
+        "jobType": "Build"
+    },
+    {
+        "id": 43,
+        "jobName": "Test Job",
+        "status": "PENDING",
+        "createdAt": "2024-08-23T13:46:01.05216",
+        "updatedAt": "2024-08-23T13:46:01.05216",
+        "jobType": "Build"
+    },
+    {
+        "id": 44,
+        "jobName": "Another Test Job",
+        "status": "PENDING",
+        "createdAt": "2024-08-23T13:46:01.09305",
+        "updatedAt": "2024-08-23T13:46:01.09305",
+        "jobType": "Deployment"
+    },
+    {
+        "id": 45,
+        "jobName": "Test Job",
+        "status": "Running",
+        "createdAt": "2024-08-23T13:46:01.111998",
+        "updatedAt": "2024-08-23T13:46:01.131945",
+        "jobType": "Build"
+    },
+    {
+        "id": 47,
+        "jobName": "Test Job",
+        "status": "PENDING",
+        "createdAt": "2024-08-23T13:46:25.380053",
+        "updatedAt": "2024-08-23T13:46:25.380053",
+        "jobType": "Build"
+    },
+    {
+        "id": 48,
+        "jobName": "Another Test Job",
+        "status": "PENDING",
+        "createdAt": "2024-08-23T13:46:25.416955",
+        "updatedAt": "2024-08-23T13:46:25.416955",
+        "jobType": "Deployment"
+    },
+    {
+        "id": 49,
+        "jobName": "Test Job",
+        "status": "Running",
+        "createdAt": "2024-08-23T13:46:25.435902",
+        "updatedAt": "2024-08-23T13:46:25.454852",
+        "jobType": "Build"
+    },
+    {
+        "id": 51,
+        "jobName": "Test Job",
+        "status": "PENDING",
+        "createdAt": "2024-08-23T13:47:06.174997",
+        "updatedAt": "2024-08-23T13:47:06.174997",
+        "jobType": "Build"
+    },
+    {
+        "id": 52,
+        "jobName": "Another Test Job",
+        "status": "PENDING",
+        "createdAt": "2024-08-23T13:47:06.212897",
+        "updatedAt": "2024-08-23T13:47:06.212897",
+        "jobType": "Deployment"
+    },
+    {
+        "id": 53,
+        "jobName": "Test Job",
+        "status": "Running",
+        "createdAt": "2024-08-23T13:47:06.230889",
+        "updatedAt": "2024-08-23T13:47:06.250794",
+        "jobType": "Build"
+    },
+    {
+        "id": 55,
+        "jobName": "Test Job",
+        "status": "PENDING",
+        "createdAt": "2024-08-23T13:51:11.557628",
+        "updatedAt": "2024-08-23T13:51:11.557628",
+        "jobType": "Build"
+    },
+    {
+        "id": 56,
+        "jobName": "Another Test Job",
+        "status": "PENDING",
+        "createdAt": "2024-08-23T13:51:11.594529",
+        "updatedAt": "2024-08-23T13:51:11.594529",
+        "jobType": "Deployment"
+    },
+    {
+        "id": 57,
+        "jobName": "Test Job",
+        "status": "Running",
+        "createdAt": "2024-08-23T13:51:11.614474",
+        "updatedAt": "2024-08-23T13:51:11.634433",
+        "jobType": "Build"
+    },
+    {
+        "id": 59,
+        "jobName": "Test Job",
+        "status": "PENDING",
+        "createdAt": "2024-08-23T13:56:06.301938",
+        "updatedAt": "2024-08-23T13:56:06.301938",
+        "jobType": "Build"
+    },
+    {
+        "id": 60,
+        "jobName": "Another Test Job",
+        "status": "PENDING",
+        "createdAt": "2024-08-23T13:56:06.344825",
+        "updatedAt": "2024-08-23T13:56:06.344825",
+        "jobType": "Deployment"
+    },
+    {
+        "id": 61,
+        "jobName": "Test Job",
+        "status": "Running",
+        "createdAt": "2024-08-23T13:56:06.367761",
+        "updatedAt": "2024-08-23T13:56:06.386713",
+        "jobType": "Build"
+    },
+    {
+        "id": 63,
+        "jobName": "Test Job",
+        "status": "PENDING",
+        "createdAt": "2024-08-23T13:57:07.81824",
+        "updatedAt": "2024-08-23T13:57:07.81824",
+        "jobType": "Build"
+    },
+    {
+        "id": 64,
+        "jobName": "Another Test Job",
+        "status": "PENDING",
+        "createdAt": "2024-08-23T13:57:07.859097",
+        "updatedAt": "2024-08-23T13:57:07.859097",
+        "jobType": "Deployment"
+    },
+    {
+        "id": 65,
+        "jobName": "Test Job",
+        "status": "Running",
+        "createdAt": "2024-08-23T13:57:07.885029",
+        "updatedAt": "2024-08-23T13:57:07.902983",
+        "jobType": "Build"
+    },
+    {
+        "id": 67,
+        "jobName": "Test Job",
+        "status": "PENDING",
+        "createdAt": "2024-08-23T13:58:19.943652",
+        "updatedAt": "2024-08-23T13:58:19.943652",
+        "jobType": "Build"
+    },
+    {
+        "id": 68,
+        "jobName": "Another Test Job",
+        "status": "PENDING",
+        "createdAt": "2024-08-23T13:58:19.986538",
+        "updatedAt": "2024-08-23T13:58:19.986538",
+        "jobType": "Deployment"
+    },
+    {
+        "id": 69,
+        "jobName": "Test Job",
+        "status": "Running",
+        "createdAt": "2024-08-23T13:58:20.006484",
+        "updatedAt": "2024-08-23T13:58:20.026432",
+        "jobType": "Build"
+    },
+    {
+        "id": 71,
+        "jobName": "Test Job",
+        "status": "PENDING",
+        "createdAt": "2024-08-23T13:59:21.610271",
+        "updatedAt": "2024-08-23T13:59:21.610271",
+        "jobType": "Build"
+    },
+    {
+        "id": 72,
+        "jobName": "Another Test Job",
+        "status": "PENDING",
+        "createdAt": "2024-08-23T13:59:21.653155",
+        "updatedAt": "2024-08-23T13:59:21.653155",
+        "jobType": "Deployment"
+    },
+    {
+        "id": 73,
+        "jobName": "Test Job",
+        "status": "Running",
+        "createdAt": "2024-08-23T13:59:21.683074",
+        "updatedAt": "2024-08-23T13:59:21.703024",
+        "jobType": "Build"
+    },
+    {
+        "id": 75,
+        "jobName": "Test Build",
+        "status": "SUCCESS",
+        "createdAt": "2024-08-23T14:00:31.625872",
+        "updatedAt": "2024-08-23T14:00:31.625872",
+        "jobType": "BUILD"
+    }
+]
+
+2024-08-23 14:07:09,397 - INFO - ======================================================================
+2024-08-23 14:07:09,399 - INFO - 
+-----------------------------------------------------------------
+2024-08-23 14:07:09,400 - INFO - Test: test_get_all_jobs(), [92m***PASSED***[0m
+2024-08-23 14:07:09,402 - INFO - -----------------------------------------------------------------
+2024-08-23 14:07:09,412 - INFO - 
+======================================================================
+2024-08-23 14:07:09,417 - INFO - Request POST to http://localhost:8080/api/jobs
+2024-08-23 14:07:09,418 - INFO - Request Body:
+{"jobName": "Test Job", "jobType": "Build", "status": "PENDING"}
+
+2024-08-23 14:07:09,420 - INFO - Response Status Code: 201
+2024-08-23 14:07:09,422 - INFO - Response Body:
+{
+    "id": 76,
+    "jobName": "Test Job",
+    "status": "PENDING",
+    "createdAt": "2024-08-23T14:07:09.4096454",
+    "updatedAt": "2024-08-23T14:07:09.4096454",
+    "jobType": "Build"
+}
+
+2024-08-23 14:07:09,423 - INFO - ======================================================================
+2024-08-23 14:07:09,431 - INFO - 
+======================================================================
+2024-08-23 14:07:09,433 - INFO - Request GET to http://localhost:8080/api/jobs/76
+2024-08-23 14:07:09,435 - INFO - Response Status Code: 200
+2024-08-23 14:07:09,436 - INFO - Response Body:
+{
+    "id": 76,
+    "jobName": "Test Job",
+    "status": "PENDING",
+    "createdAt": "2024-08-23T14:07:09.409645",
+    "updatedAt": "2024-08-23T14:07:09.409645",
+    "jobType": "Build"
+}
+
+2024-08-23 14:07:09,437 - INFO - ======================================================================
+2024-08-23 14:07:09,439 - INFO - 
+-----------------------------------------------------------------
+2024-08-23 14:07:09,440 - INFO - Test: test_get_job_by_id(), [92m***PASSED***[0m
+2024-08-23 14:07:09,442 - INFO - -----------------------------------------------------------------
+2024-08-23 14:07:09,452 - INFO - 
+======================================================================
+2024-08-23 14:07:09,453 - INFO - Request POST to http://localhost:8080/api/jobs
+2024-08-23 14:07:09,455 - INFO - Request Body:
+{"jobName": "Another Test Job", "jobType": "Deployment", "status": "PENDING"}
+
+2024-08-23 14:07:09,456 - INFO - Response Status Code: 201
+2024-08-23 14:07:09,458 - INFO - Response Body:
+{
+    "id": 77,
+    "jobName": "Another Test Job",
+    "status": "PENDING",
+    "createdAt": "2024-08-23T14:07:09.449537",
+    "updatedAt": "2024-08-23T14:07:09.449537",
+    "jobType": "Deployment"
+}
+
+2024-08-23 14:07:09,459 - INFO - ======================================================================
+2024-08-23 14:07:09,461 - INFO - 
+-----------------------------------------------------------------
+2024-08-23 14:07:09,462 - INFO - Test: test_create_job(), [92m***PASSED***[0m
+2024-08-23 14:07:09,463 - INFO - -----------------------------------------------------------------
+2024-08-23 14:07:09,472 - INFO - 
+======================================================================
+2024-08-23 14:07:09,474 - INFO - Request POST to http://localhost:8080/api/jobs
+2024-08-23 14:07:09,476 - INFO - Request Body:
+{"jobName": "Test Job", "jobType": "Build", "status": "PENDING"}
+
+2024-08-23 14:07:09,478 - INFO - Response Status Code: 201
+2024-08-23 14:07:09,479 - INFO - Response Body:
+{
+    "id": 78,
+    "jobName": "Test Job",
+    "status": "PENDING",
+    "createdAt": "2024-08-23T14:07:09.4704802",
+    "updatedAt": "2024-08-23T14:07:09.4704802",
+    "jobType": "Build"
+}
+
+2024-08-23 14:07:09,481 - INFO - ======================================================================
+2024-08-23 14:07:09,491 - INFO - 
+======================================================================
+2024-08-23 14:07:09,493 - INFO - Request PUT to http://localhost:8080/api/jobs/78
+2024-08-23 14:07:09,494 - INFO - Request Body:
+{"jobName": "Test Job", "jobType": "Build", "status": "Running"}
+
+2024-08-23 14:07:09,495 - INFO - Response Status Code: 200
+2024-08-23 14:07:09,497 - INFO - Response Body:
+{
+    "id": 78,
+    "jobName": "Test Job",
+    "status": "Running",
+    "createdAt": "2024-08-23T14:07:09.47048",
+    "updatedAt": "2024-08-23T14:07:09.4884316",
+    "jobType": "Build"
+}
+
+2024-08-23 14:07:09,498 - INFO - ======================================================================
+2024-08-23 14:07:09,499 - INFO - 
+-----------------------------------------------------------------
+2024-08-23 14:07:09,500 - INFO - Test: test_update_job(), [92m***PASSED***[0m
+2024-08-23 14:07:09,502 - INFO - -----------------------------------------------------------------
+2024-08-23 14:07:09,510 - INFO - 
+======================================================================
+2024-08-23 14:07:09,512 - INFO - Request POST to http://localhost:8080/api/jobs
+2024-08-23 14:07:09,513 - INFO - Request Body:
+{"jobName": "Test Job", "jobType": "Build", "status": "PENDING"}
+
+2024-08-23 14:07:09,515 - INFO - Response Status Code: 201
+2024-08-23 14:07:09,516 - INFO - Response Body:
+{
+    "id": 79,
+    "jobName": "Test Job",
+    "status": "PENDING",
+    "createdAt": "2024-08-23T14:07:09.5083818",
+    "updatedAt": "2024-08-23T14:07:09.5083818",
+    "jobType": "Build"
+}
+
+2024-08-23 14:07:09,518 - INFO - ======================================================================
+2024-08-23 14:07:09,526 - INFO - 
+======================================================================
+2024-08-23 14:07:09,528 - INFO - Request DELETE to http://localhost:8080/api/jobs/79
+2024-08-23 14:07:09,529 - INFO - Response Status Code: 204
+2024-08-23 14:07:09,531 - WARNING - Response is not in valid JSON format or is empty.
+2024-08-23 14:07:09,534 - INFO - Response Body:
+
+
+2024-08-23 14:07:09,536 - INFO - ======================================================================
+2024-08-23 14:07:09,542 - INFO - 
+======================================================================
+2024-08-23 14:07:09,544 - INFO - Request GET to http://localhost:8080/api/jobs/79
+2024-08-23 14:07:09,545 - INFO - Response Status Code: 404
+2024-08-23 14:07:09,547 - WARNING - Response is not in valid JSON format or is empty.
+2024-08-23 14:07:09,549 - INFO - Response Body:
+
+
+2024-08-23 14:07:09,552 - INFO - ======================================================================
+2024-08-23 14:07:09,553 - INFO - 
+-----------------------------------------------------------------
+2024-08-23 14:07:09,554 - INFO - Test: test_delete_job(), [92m***PASSED***[0m
+2024-08-23 14:07:09,556 - INFO - -----------------------------------------------------------------

@@ -1,12 +1,11 @@
 package hit.final_project.cicd;
 
-import hit.final_project.dto.CICDJobDTO;
+import java.time.LocalDateTime;
+import java.util.List;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
-
-import java.time.LocalDateTime;
-import java.util.List;
+import hit.final_project.dto.CICDJobDTO;
 
 @Service
 public class CICDJobService {
@@ -26,7 +25,7 @@ public class CICDJobService {
         return cicdJobRepository.findById(id)
                 .orElseThrow(() -> {
                     logger.info("Job not found with ID {}", id);
-                    return new RuntimeException("Job not found");
+                    return new JobNotFoundException("Job not found with ID " + id);
                 });
     }
 
@@ -47,7 +46,7 @@ public class CICDJobService {
         CICDJob cicdJob = cicdJobRepository.findById(id)
                 .orElseThrow(() -> {
                     logger.info("Job not found with ID {}", id);
-                    return new RuntimeException("Job not found");
+                    return new JobNotFoundException("Job not found with ID " + id);
                 });
         cicdJob.setJobName(cicdJobDTO.getJobName());
         cicdJob.setStatus(cicdJobDTO.getStatus());
@@ -60,7 +59,7 @@ public class CICDJobService {
         CICDJob cicdJob = cicdJobRepository.findById(id)
                 .orElseThrow(() -> {
                     logger.info("Job not found with ID {}", id);
-                    return new RuntimeException("Job not found");
+                    return new JobNotFoundException("Job not found with ID " + id);
                 });
         cicdJobRepository.delete(cicdJob);
         logger.info("CICD Job with ID {} has been deleted", id);

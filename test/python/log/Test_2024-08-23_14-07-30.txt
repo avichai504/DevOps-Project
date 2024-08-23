@@ -1,0 +1,980 @@
+2024-08-23 14:07:30,797 - INFO - Attempting to delete all jobs...
+2024-08-23 14:07:30,810 - INFO - 
+======================================================================
+2024-08-23 14:07:30,810 - INFO - Request GET to http://localhost:8080/api/jobs
+2024-08-23 14:07:30,811 - INFO - Response Status Code: 200
+2024-08-23 14:07:30,812 - INFO - Response Body:
+[
+    {
+        "id": 21,
+        "jobName": "Test Job",
+        "status": "Running",
+        "createdAt": "2024-08-23T13:40:29.884789",
+        "updatedAt": "2024-08-23T13:40:29.894762",
+        "jobType": "Build"
+    },
+    {
+        "id": 23,
+        "jobName": "Test Job",
+        "status": "PENDING",
+        "createdAt": "2024-08-23T13:40:57.939184",
+        "updatedAt": "2024-08-23T13:40:57.939184",
+        "jobType": "Build"
+    },
+    {
+        "id": 24,
+        "jobName": "Another Test Job",
+        "status": "PENDING",
+        "createdAt": "2024-08-23T13:40:57.957135",
+        "updatedAt": "2024-08-23T13:40:57.957135",
+        "jobType": "Deployment"
+    },
+    {
+        "id": 25,
+        "jobName": "Test Job",
+        "status": "Running",
+        "createdAt": "2024-08-23T13:40:57.966116",
+        "updatedAt": "2024-08-23T13:40:57.976086",
+        "jobType": "Build"
+    },
+    {
+        "id": 27,
+        "jobName": "Test Job",
+        "status": "PENDING",
+        "createdAt": "2024-08-23T13:42:14.903342",
+        "updatedAt": "2024-08-23T13:42:14.903342",
+        "jobType": "Build"
+    },
+    {
+        "id": 28,
+        "jobName": "Another Test Job",
+        "status": "PENDING",
+        "createdAt": "2024-08-23T13:42:14.941237",
+        "updatedAt": "2024-08-23T13:42:14.941237",
+        "jobType": "Deployment"
+    },
+    {
+        "id": 29,
+        "jobName": "Test Job",
+        "status": "Running",
+        "createdAt": "2024-08-23T13:42:14.95919",
+        "updatedAt": "2024-08-23T13:42:14.979136",
+        "jobType": "Build"
+    },
+    {
+        "id": 31,
+        "jobName": "Test Job",
+        "status": "PENDING",
+        "createdAt": "2024-08-23T13:43:30.309725",
+        "updatedAt": "2024-08-23T13:43:30.309725",
+        "jobType": "Build"
+    },
+    {
+        "id": 32,
+        "jobName": "Another Test Job",
+        "status": "PENDING",
+        "createdAt": "2024-08-23T13:43:30.326678",
+        "updatedAt": "2024-08-23T13:43:30.326678",
+        "jobType": "Deployment"
+    },
+    {
+        "id": 33,
+        "jobName": "Test Job",
+        "status": "PENDING",
+        "createdAt": "2024-08-23T13:43:30.341638",
+        "updatedAt": "2024-08-23T13:43:30.341638",
+        "jobType": "Build"
+    },
+    {
+        "id": 34,
+        "jobName": "Test Job",
+        "status": "PENDING",
+        "createdAt": "2024-08-23T13:43:30.358593",
+        "updatedAt": "2024-08-23T13:43:30.358593",
+        "jobType": "Build"
+    },
+    {
+        "id": 35,
+        "jobName": "Test Job",
+        "status": "PENDING",
+        "createdAt": "2024-08-23T13:43:35.005163",
+        "updatedAt": "2024-08-23T13:43:35.005163",
+        "jobType": "Build"
+    },
+    {
+        "id": 36,
+        "jobName": "Another Test Job",
+        "status": "PENDING",
+        "createdAt": "2024-08-23T13:43:35.041067",
+        "updatedAt": "2024-08-23T13:43:35.041067",
+        "jobType": "Deployment"
+    },
+    {
+        "id": 37,
+        "jobName": "Test Job",
+        "status": "Running",
+        "createdAt": "2024-08-23T13:43:35.059019",
+        "updatedAt": "2024-08-23T13:43:35.077967",
+        "jobType": "Build"
+    },
+    {
+        "id": 39,
+        "jobName": "Test Job",
+        "status": "PENDING",
+        "createdAt": "2024-08-23T13:45:38.623078",
+        "updatedAt": "2024-08-23T13:45:38.623078",
+        "jobType": "Build"
+    },
+    {
+        "id": 40,
+        "jobName": "Another Test Job",
+        "status": "PENDING",
+        "createdAt": "2024-08-23T13:45:38.657983",
+        "updatedAt": "2024-08-23T13:45:38.657983",
+        "jobType": "Deployment"
+    },
+    {
+        "id": 41,
+        "jobName": "Test Job",
+        "status": "Running",
+        "createdAt": "2024-08-23T13:45:38.675937",
+        "updatedAt": "2024-08-23T13:45:38.69389",
+        "jobType": "Build"
+    },
+    {
+        "id": 43,
+        "jobName": "Test Job",
+        "status": "PENDING",
+        "createdAt": "2024-08-23T13:46:01.05216",
+        "updatedAt": "2024-08-23T13:46:01.05216",
+        "jobType": "Build"
+    },
+    {
+        "id": 44,
+        "jobName": "Another Test Job",
+        "status": "PENDING",
+        "createdAt": "2024-08-23T13:46:01.09305",
+        "updatedAt": "2024-08-23T13:46:01.09305",
+        "jobType": "Deployment"
+    },
+    {
+        "id": 45,
+        "jobName": "Test Job",
+        "status": "Running",
+        "createdAt": "2024-08-23T13:46:01.111998",
+        "updatedAt": "2024-08-23T13:46:01.131945",
+        "jobType": "Build"
+    },
+    {
+        "id": 47,
+        "jobName": "Test Job",
+        "status": "PENDING",
+        "createdAt": "2024-08-23T13:46:25.380053",
+        "updatedAt": "2024-08-23T13:46:25.380053",
+        "jobType": "Build"
+    },
+    {
+        "id": 48,
+        "jobName": "Another Test Job",
+        "status": "PENDING",
+        "createdAt": "2024-08-23T13:46:25.416955",
+        "updatedAt": "2024-08-23T13:46:25.416955",
+        "jobType": "Deployment"
+    },
+    {
+        "id": 49,
+        "jobName": "Test Job",
+        "status": "Running",
+        "createdAt": "2024-08-23T13:46:25.435902",
+        "updatedAt": "2024-08-23T13:46:25.454852",
+        "jobType": "Build"
+    },
+    {
+        "id": 51,
+        "jobName": "Test Job",
+        "status": "PENDING",
+        "createdAt": "2024-08-23T13:47:06.174997",
+        "updatedAt": "2024-08-23T13:47:06.174997",
+        "jobType": "Build"
+    },
+    {
+        "id": 52,
+        "jobName": "Another Test Job",
+        "status": "PENDING",
+        "createdAt": "2024-08-23T13:47:06.212897",
+        "updatedAt": "2024-08-23T13:47:06.212897",
+        "jobType": "Deployment"
+    },
+    {
+        "id": 53,
+        "jobName": "Test Job",
+        "status": "Running",
+        "createdAt": "2024-08-23T13:47:06.230889",
+        "updatedAt": "2024-08-23T13:47:06.250794",
+        "jobType": "Build"
+    },
+    {
+        "id": 55,
+        "jobName": "Test Job",
+        "status": "PENDING",
+        "createdAt": "2024-08-23T13:51:11.557628",
+        "updatedAt": "2024-08-23T13:51:11.557628",
+        "jobType": "Build"
+    },
+    {
+        "id": 56,
+        "jobName": "Another Test Job",
+        "status": "PENDING",
+        "createdAt": "2024-08-23T13:51:11.594529",
+        "updatedAt": "2024-08-23T13:51:11.594529",
+        "jobType": "Deployment"
+    },
+    {
+        "id": 57,
+        "jobName": "Test Job",
+        "status": "Running",
+        "createdAt": "2024-08-23T13:51:11.614474",
+        "updatedAt": "2024-08-23T13:51:11.634433",
+        "jobType": "Build"
+    },
+    {
+        "id": 59,
+        "jobName": "Test Job",
+        "status": "PENDING",
+        "createdAt": "2024-08-23T13:56:06.301938",
+        "updatedAt": "2024-08-23T13:56:06.301938",
+        "jobType": "Build"
+    },
+    {
+        "id": 60,
+        "jobName": "Another Test Job",
+        "status": "PENDING",
+        "createdAt": "2024-08-23T13:56:06.344825",
+        "updatedAt": "2024-08-23T13:56:06.344825",
+        "jobType": "Deployment"
+    },
+    {
+        "id": 61,
+        "jobName": "Test Job",
+        "status": "Running",
+        "createdAt": "2024-08-23T13:56:06.367761",
+        "updatedAt": "2024-08-23T13:56:06.386713",
+        "jobType": "Build"
+    },
+    {
+        "id": 63,
+        "jobName": "Test Job",
+        "status": "PENDING",
+        "createdAt": "2024-08-23T13:57:07.81824",
+        "updatedAt": "2024-08-23T13:57:07.81824",
+        "jobType": "Build"
+    },
+    {
+        "id": 64,
+        "jobName": "Another Test Job",
+        "status": "PENDING",
+        "createdAt": "2024-08-23T13:57:07.859097",
+        "updatedAt": "2024-08-23T13:57:07.859097",
+        "jobType": "Deployment"
+    },
+    {
+        "id": 65,
+        "jobName": "Test Job",
+        "status": "Running",
+        "createdAt": "2024-08-23T13:57:07.885029",
+        "updatedAt": "2024-08-23T13:57:07.902983",
+        "jobType": "Build"
+    },
+    {
+        "id": 67,
+        "jobName": "Test Job",
+        "status": "PENDING",
+        "createdAt": "2024-08-23T13:58:19.943652",
+        "updatedAt": "2024-08-23T13:58:19.943652",
+        "jobType": "Build"
+    },
+    {
+        "id": 68,
+        "jobName": "Another Test Job",
+        "status": "PENDING",
+        "createdAt": "2024-08-23T13:58:19.986538",
+        "updatedAt": "2024-08-23T13:58:19.986538",
+        "jobType": "Deployment"
+    },
+    {
+        "id": 69,
+        "jobName": "Test Job",
+        "status": "Running",
+        "createdAt": "2024-08-23T13:58:20.006484",
+        "updatedAt": "2024-08-23T13:58:20.026432",
+        "jobType": "Build"
+    },
+    {
+        "id": 71,
+        "jobName": "Test Job",
+        "status": "PENDING",
+        "createdAt": "2024-08-23T13:59:21.610271",
+        "updatedAt": "2024-08-23T13:59:21.610271",
+        "jobType": "Build"
+    },
+    {
+        "id": 72,
+        "jobName": "Another Test Job",
+        "status": "PENDING",
+        "createdAt": "2024-08-23T13:59:21.653155",
+        "updatedAt": "2024-08-23T13:59:21.653155",
+        "jobType": "Deployment"
+    },
+    {
+        "id": 73,
+        "jobName": "Test Job",
+        "status": "Running",
+        "createdAt": "2024-08-23T13:59:21.683074",
+        "updatedAt": "2024-08-23T13:59:21.703024",
+        "jobType": "Build"
+    },
+    {
+        "id": 75,
+        "jobName": "Test Build",
+        "status": "SUCCESS",
+        "createdAt": "2024-08-23T14:00:31.625872",
+        "updatedAt": "2024-08-23T14:00:31.625872",
+        "jobType": "BUILD"
+    },
+    {
+        "id": 76,
+        "jobName": "Test Job",
+        "status": "PENDING",
+        "createdAt": "2024-08-23T14:07:09.409645",
+        "updatedAt": "2024-08-23T14:07:09.409645",
+        "jobType": "Build"
+    },
+    {
+        "id": 77,
+        "jobName": "Another Test Job",
+        "status": "PENDING",
+        "createdAt": "2024-08-23T14:07:09.449537",
+        "updatedAt": "2024-08-23T14:07:09.449537",
+        "jobType": "Deployment"
+    },
+    {
+        "id": 78,
+        "jobName": "Test Job",
+        "status": "Running",
+        "createdAt": "2024-08-23T14:07:09.47048",
+        "updatedAt": "2024-08-23T14:07:09.488432",
+        "jobType": "Build"
+    }
+]
+
+2024-08-23 14:07:30,837 - INFO - ======================================================================
+2024-08-23 14:07:30,843 - INFO - 
+======================================================================
+2024-08-23 14:07:30,844 - INFO - Request DELETE to http://localhost:8080/api/jobs/21
+2024-08-23 14:07:30,844 - INFO - Response Status Code: 204
+2024-08-23 14:07:30,844 - WARNING - Response is not in valid JSON format or is empty.
+2024-08-23 14:07:30,845 - INFO - Response Body:
+
+
+2024-08-23 14:07:30,845 - INFO - ======================================================================
+2024-08-23 14:07:30,845 - INFO - Deleted job with ID: 21
+2024-08-23 14:07:30,852 - INFO - 
+======================================================================
+2024-08-23 14:07:30,852 - INFO - Request DELETE to http://localhost:8080/api/jobs/23
+2024-08-23 14:07:30,852 - INFO - Response Status Code: 204
+2024-08-23 14:07:30,853 - WARNING - Response is not in valid JSON format or is empty.
+2024-08-23 14:07:30,853 - INFO - Response Body:
+
+
+2024-08-23 14:07:30,853 - INFO - ======================================================================
+2024-08-23 14:07:30,854 - INFO - Deleted job with ID: 23
+2024-08-23 14:07:30,860 - INFO - 
+======================================================================
+2024-08-23 14:07:30,861 - INFO - Request DELETE to http://localhost:8080/api/jobs/24
+2024-08-23 14:07:30,861 - INFO - Response Status Code: 204
+2024-08-23 14:07:30,861 - WARNING - Response is not in valid JSON format or is empty.
+2024-08-23 14:07:30,862 - INFO - Response Body:
+
+
+2024-08-23 14:07:30,862 - INFO - ======================================================================
+2024-08-23 14:07:30,862 - INFO - Deleted job with ID: 24
+2024-08-23 14:07:30,869 - INFO - 
+======================================================================
+2024-08-23 14:07:30,870 - INFO - Request DELETE to http://localhost:8080/api/jobs/25
+2024-08-23 14:07:30,870 - INFO - Response Status Code: 204
+2024-08-23 14:07:30,870 - WARNING - Response is not in valid JSON format or is empty.
+2024-08-23 14:07:30,871 - INFO - Response Body:
+
+
+2024-08-23 14:07:30,871 - INFO - ======================================================================
+2024-08-23 14:07:30,871 - INFO - Deleted job with ID: 25
+2024-08-23 14:07:30,878 - INFO - 
+======================================================================
+2024-08-23 14:07:30,879 - INFO - Request DELETE to http://localhost:8080/api/jobs/27
+2024-08-23 14:07:30,879 - INFO - Response Status Code: 204
+2024-08-23 14:07:30,879 - WARNING - Response is not in valid JSON format or is empty.
+2024-08-23 14:07:30,879 - INFO - Response Body:
+
+
+2024-08-23 14:07:30,880 - INFO - ======================================================================
+2024-08-23 14:07:30,880 - INFO - Deleted job with ID: 27
+2024-08-23 14:07:30,886 - INFO - 
+======================================================================
+2024-08-23 14:07:30,887 - INFO - Request DELETE to http://localhost:8080/api/jobs/28
+2024-08-23 14:07:30,887 - INFO - Response Status Code: 204
+2024-08-23 14:07:30,888 - WARNING - Response is not in valid JSON format or is empty.
+2024-08-23 14:07:30,888 - INFO - Response Body:
+
+
+2024-08-23 14:07:30,888 - INFO - ======================================================================
+2024-08-23 14:07:30,889 - INFO - Deleted job with ID: 28
+2024-08-23 14:07:30,895 - INFO - 
+======================================================================
+2024-08-23 14:07:30,896 - INFO - Request DELETE to http://localhost:8080/api/jobs/29
+2024-08-23 14:07:30,896 - INFO - Response Status Code: 204
+2024-08-23 14:07:30,896 - WARNING - Response is not in valid JSON format or is empty.
+2024-08-23 14:07:30,897 - INFO - Response Body:
+
+
+2024-08-23 14:07:30,897 - INFO - ======================================================================
+2024-08-23 14:07:30,897 - INFO - Deleted job with ID: 29
+2024-08-23 14:07:30,903 - INFO - 
+======================================================================
+2024-08-23 14:07:30,904 - INFO - Request DELETE to http://localhost:8080/api/jobs/31
+2024-08-23 14:07:30,904 - INFO - Response Status Code: 204
+2024-08-23 14:07:30,904 - WARNING - Response is not in valid JSON format or is empty.
+2024-08-23 14:07:30,905 - INFO - Response Body:
+
+
+2024-08-23 14:07:30,905 - INFO - ======================================================================
+2024-08-23 14:07:30,905 - INFO - Deleted job with ID: 31
+2024-08-23 14:07:30,912 - INFO - 
+======================================================================
+2024-08-23 14:07:30,912 - INFO - Request DELETE to http://localhost:8080/api/jobs/32
+2024-08-23 14:07:30,912 - INFO - Response Status Code: 204
+2024-08-23 14:07:30,913 - WARNING - Response is not in valid JSON format or is empty.
+2024-08-23 14:07:30,913 - INFO - Response Body:
+
+
+2024-08-23 14:07:30,913 - INFO - ======================================================================
+2024-08-23 14:07:30,914 - INFO - Deleted job with ID: 32
+2024-08-23 14:07:30,920 - INFO - 
+======================================================================
+2024-08-23 14:07:30,920 - INFO - Request DELETE to http://localhost:8080/api/jobs/33
+2024-08-23 14:07:30,921 - INFO - Response Status Code: 204
+2024-08-23 14:07:30,921 - WARNING - Response is not in valid JSON format or is empty.
+2024-08-23 14:07:30,921 - INFO - Response Body:
+
+
+2024-08-23 14:07:30,921 - INFO - ======================================================================
+2024-08-23 14:07:30,922 - INFO - Deleted job with ID: 33
+2024-08-23 14:07:30,928 - INFO - 
+======================================================================
+2024-08-23 14:07:30,929 - INFO - Request DELETE to http://localhost:8080/api/jobs/34
+2024-08-23 14:07:30,929 - INFO - Response Status Code: 204
+2024-08-23 14:07:30,929 - WARNING - Response is not in valid JSON format or is empty.
+2024-08-23 14:07:30,930 - INFO - Response Body:
+
+
+2024-08-23 14:07:30,930 - INFO - ======================================================================
+2024-08-23 14:07:30,930 - INFO - Deleted job with ID: 34
+2024-08-23 14:07:30,936 - INFO - 
+======================================================================
+2024-08-23 14:07:30,937 - INFO - Request DELETE to http://localhost:8080/api/jobs/35
+2024-08-23 14:07:30,937 - INFO - Response Status Code: 204
+2024-08-23 14:07:30,937 - WARNING - Response is not in valid JSON format or is empty.
+2024-08-23 14:07:30,938 - INFO - Response Body:
+
+
+2024-08-23 14:07:30,938 - INFO - ======================================================================
+2024-08-23 14:07:30,938 - INFO - Deleted job with ID: 35
+2024-08-23 14:07:30,944 - INFO - 
+======================================================================
+2024-08-23 14:07:30,944 - INFO - Request DELETE to http://localhost:8080/api/jobs/36
+2024-08-23 14:07:30,945 - INFO - Response Status Code: 204
+2024-08-23 14:07:30,945 - WARNING - Response is not in valid JSON format or is empty.
+2024-08-23 14:07:30,946 - INFO - Response Body:
+
+
+2024-08-23 14:07:30,946 - INFO - ======================================================================
+2024-08-23 14:07:30,946 - INFO - Deleted job with ID: 36
+2024-08-23 14:07:30,955 - INFO - 
+======================================================================
+2024-08-23 14:07:30,955 - INFO - Request DELETE to http://localhost:8080/api/jobs/37
+2024-08-23 14:07:30,955 - INFO - Response Status Code: 204
+2024-08-23 14:07:30,956 - WARNING - Response is not in valid JSON format or is empty.
+2024-08-23 14:07:30,956 - INFO - Response Body:
+
+
+2024-08-23 14:07:30,956 - INFO - ======================================================================
+2024-08-23 14:07:30,956 - INFO - Deleted job with ID: 37
+2024-08-23 14:07:30,963 - INFO - 
+======================================================================
+2024-08-23 14:07:30,963 - INFO - Request DELETE to http://localhost:8080/api/jobs/39
+2024-08-23 14:07:30,963 - INFO - Response Status Code: 204
+2024-08-23 14:07:30,964 - WARNING - Response is not in valid JSON format or is empty.
+2024-08-23 14:07:30,964 - INFO - Response Body:
+
+
+2024-08-23 14:07:30,965 - INFO - ======================================================================
+2024-08-23 14:07:30,965 - INFO - Deleted job with ID: 39
+2024-08-23 14:07:30,971 - INFO - 
+======================================================================
+2024-08-23 14:07:30,972 - INFO - Request DELETE to http://localhost:8080/api/jobs/40
+2024-08-23 14:07:30,972 - INFO - Response Status Code: 204
+2024-08-23 14:07:30,972 - WARNING - Response is not in valid JSON format or is empty.
+2024-08-23 14:07:30,973 - INFO - Response Body:
+
+
+2024-08-23 14:07:30,973 - INFO - ======================================================================
+2024-08-23 14:07:30,973 - INFO - Deleted job with ID: 40
+2024-08-23 14:07:30,979 - INFO - 
+======================================================================
+2024-08-23 14:07:30,980 - INFO - Request DELETE to http://localhost:8080/api/jobs/41
+2024-08-23 14:07:30,980 - INFO - Response Status Code: 204
+2024-08-23 14:07:30,980 - WARNING - Response is not in valid JSON format or is empty.
+2024-08-23 14:07:30,981 - INFO - Response Body:
+
+
+2024-08-23 14:07:30,981 - INFO - ======================================================================
+2024-08-23 14:07:30,981 - INFO - Deleted job with ID: 41
+2024-08-23 14:07:30,987 - INFO - 
+======================================================================
+2024-08-23 14:07:30,988 - INFO - Request DELETE to http://localhost:8080/api/jobs/43
+2024-08-23 14:07:30,988 - INFO - Response Status Code: 204
+2024-08-23 14:07:30,989 - WARNING - Response is not in valid JSON format or is empty.
+2024-08-23 14:07:30,989 - INFO - Response Body:
+
+
+2024-08-23 14:07:30,989 - INFO - ======================================================================
+2024-08-23 14:07:30,989 - INFO - Deleted job with ID: 43
+2024-08-23 14:07:30,994 - INFO - 
+======================================================================
+2024-08-23 14:07:30,995 - INFO - Request DELETE to http://localhost:8080/api/jobs/44
+2024-08-23 14:07:30,995 - INFO - Response Status Code: 204
+2024-08-23 14:07:30,995 - WARNING - Response is not in valid JSON format or is empty.
+2024-08-23 14:07:30,996 - INFO - Response Body:
+
+
+2024-08-23 14:07:30,996 - INFO - ======================================================================
+2024-08-23 14:07:30,996 - INFO - Deleted job with ID: 44
+2024-08-23 14:07:31,002 - INFO - 
+======================================================================
+2024-08-23 14:07:31,003 - INFO - Request DELETE to http://localhost:8080/api/jobs/45
+2024-08-23 14:07:31,003 - INFO - Response Status Code: 204
+2024-08-23 14:07:31,003 - WARNING - Response is not in valid JSON format or is empty.
+2024-08-23 14:07:31,004 - INFO - Response Body:
+
+
+2024-08-23 14:07:31,004 - INFO - ======================================================================
+2024-08-23 14:07:31,004 - INFO - Deleted job with ID: 45
+2024-08-23 14:07:31,010 - INFO - 
+======================================================================
+2024-08-23 14:07:31,011 - INFO - Request DELETE to http://localhost:8080/api/jobs/47
+2024-08-23 14:07:31,011 - INFO - Response Status Code: 204
+2024-08-23 14:07:31,011 - WARNING - Response is not in valid JSON format or is empty.
+2024-08-23 14:07:31,012 - INFO - Response Body:
+
+
+2024-08-23 14:07:31,012 - INFO - ======================================================================
+2024-08-23 14:07:31,012 - INFO - Deleted job with ID: 47
+2024-08-23 14:07:31,018 - INFO - 
+======================================================================
+2024-08-23 14:07:31,019 - INFO - Request DELETE to http://localhost:8080/api/jobs/48
+2024-08-23 14:07:31,019 - INFO - Response Status Code: 204
+2024-08-23 14:07:31,019 - WARNING - Response is not in valid JSON format or is empty.
+2024-08-23 14:07:31,020 - INFO - Response Body:
+
+
+2024-08-23 14:07:31,020 - INFO - ======================================================================
+2024-08-23 14:07:31,020 - INFO - Deleted job with ID: 48
+2024-08-23 14:07:31,027 - INFO - 
+======================================================================
+2024-08-23 14:07:31,027 - INFO - Request DELETE to http://localhost:8080/api/jobs/49
+2024-08-23 14:07:31,027 - INFO - Response Status Code: 204
+2024-08-23 14:07:31,028 - WARNING - Response is not in valid JSON format or is empty.
+2024-08-23 14:07:31,028 - INFO - Response Body:
+
+
+2024-08-23 14:07:31,028 - INFO - ======================================================================
+2024-08-23 14:07:31,029 - INFO - Deleted job with ID: 49
+2024-08-23 14:07:31,036 - INFO - 
+======================================================================
+2024-08-23 14:07:31,036 - INFO - Request DELETE to http://localhost:8080/api/jobs/51
+2024-08-23 14:07:31,036 - INFO - Response Status Code: 204
+2024-08-23 14:07:31,037 - WARNING - Response is not in valid JSON format or is empty.
+2024-08-23 14:07:31,037 - INFO - Response Body:
+
+
+2024-08-23 14:07:31,037 - INFO - ======================================================================
+2024-08-23 14:07:31,038 - INFO - Deleted job with ID: 51
+2024-08-23 14:07:31,044 - INFO - 
+======================================================================
+2024-08-23 14:07:31,044 - INFO - Request DELETE to http://localhost:8080/api/jobs/52
+2024-08-23 14:07:31,045 - INFO - Response Status Code: 204
+2024-08-23 14:07:31,045 - WARNING - Response is not in valid JSON format or is empty.
+2024-08-23 14:07:31,045 - INFO - Response Body:
+
+
+2024-08-23 14:07:31,045 - INFO - ======================================================================
+2024-08-23 14:07:31,046 - INFO - Deleted job with ID: 52
+2024-08-23 14:07:31,052 - INFO - 
+======================================================================
+2024-08-23 14:07:31,052 - INFO - Request DELETE to http://localhost:8080/api/jobs/53
+2024-08-23 14:07:31,052 - INFO - Response Status Code: 204
+2024-08-23 14:07:31,053 - WARNING - Response is not in valid JSON format or is empty.
+2024-08-23 14:07:31,053 - INFO - Response Body:
+
+
+2024-08-23 14:07:31,053 - INFO - ======================================================================
+2024-08-23 14:07:31,054 - INFO - Deleted job with ID: 53
+2024-08-23 14:07:31,060 - INFO - 
+======================================================================
+2024-08-23 14:07:31,060 - INFO - Request DELETE to http://localhost:8080/api/jobs/55
+2024-08-23 14:07:31,060 - INFO - Response Status Code: 204
+2024-08-23 14:07:31,061 - WARNING - Response is not in valid JSON format or is empty.
+2024-08-23 14:07:31,061 - INFO - Response Body:
+
+
+2024-08-23 14:07:31,061 - INFO - ======================================================================
+2024-08-23 14:07:31,062 - INFO - Deleted job with ID: 55
+2024-08-23 14:07:31,068 - INFO - 
+======================================================================
+2024-08-23 14:07:31,068 - INFO - Request DELETE to http://localhost:8080/api/jobs/56
+2024-08-23 14:07:31,068 - INFO - Response Status Code: 204
+2024-08-23 14:07:31,069 - WARNING - Response is not in valid JSON format or is empty.
+2024-08-23 14:07:31,069 - INFO - Response Body:
+
+
+2024-08-23 14:07:31,069 - INFO - ======================================================================
+2024-08-23 14:07:31,070 - INFO - Deleted job with ID: 56
+2024-08-23 14:07:31,077 - INFO - 
+======================================================================
+2024-08-23 14:07:31,077 - INFO - Request DELETE to http://localhost:8080/api/jobs/57
+2024-08-23 14:07:31,077 - INFO - Response Status Code: 204
+2024-08-23 14:07:31,078 - WARNING - Response is not in valid JSON format or is empty.
+2024-08-23 14:07:31,078 - INFO - Response Body:
+
+
+2024-08-23 14:07:31,079 - INFO - ======================================================================
+2024-08-23 14:07:31,079 - INFO - Deleted job with ID: 57
+2024-08-23 14:07:31,086 - INFO - 
+======================================================================
+2024-08-23 14:07:31,087 - INFO - Request DELETE to http://localhost:8080/api/jobs/59
+2024-08-23 14:07:31,087 - INFO - Response Status Code: 204
+2024-08-23 14:07:31,087 - WARNING - Response is not in valid JSON format or is empty.
+2024-08-23 14:07:31,087 - INFO - Response Body:
+
+
+2024-08-23 14:07:31,088 - INFO - ======================================================================
+2024-08-23 14:07:31,088 - INFO - Deleted job with ID: 59
+2024-08-23 14:07:31,095 - INFO - 
+======================================================================
+2024-08-23 14:07:31,095 - INFO - Request DELETE to http://localhost:8080/api/jobs/60
+2024-08-23 14:07:31,095 - INFO - Response Status Code: 204
+2024-08-23 14:07:31,096 - WARNING - Response is not in valid JSON format or is empty.
+2024-08-23 14:07:31,096 - INFO - Response Body:
+
+
+2024-08-23 14:07:31,097 - INFO - ======================================================================
+2024-08-23 14:07:31,097 - INFO - Deleted job with ID: 60
+2024-08-23 14:07:31,103 - INFO - 
+======================================================================
+2024-08-23 14:07:31,103 - INFO - Request DELETE to http://localhost:8080/api/jobs/61
+2024-08-23 14:07:31,104 - INFO - Response Status Code: 204
+2024-08-23 14:07:31,104 - WARNING - Response is not in valid JSON format or is empty.
+2024-08-23 14:07:31,104 - INFO - Response Body:
+
+
+2024-08-23 14:07:31,105 - INFO - ======================================================================
+2024-08-23 14:07:31,105 - INFO - Deleted job with ID: 61
+2024-08-23 14:07:31,111 - INFO - 
+======================================================================
+2024-08-23 14:07:31,112 - INFO - Request DELETE to http://localhost:8080/api/jobs/63
+2024-08-23 14:07:31,112 - INFO - Response Status Code: 204
+2024-08-23 14:07:31,113 - WARNING - Response is not in valid JSON format or is empty.
+2024-08-23 14:07:31,113 - INFO - Response Body:
+
+
+2024-08-23 14:07:31,113 - INFO - ======================================================================
+2024-08-23 14:07:31,114 - INFO - Deleted job with ID: 63
+2024-08-23 14:07:31,120 - INFO - 
+======================================================================
+2024-08-23 14:07:31,121 - INFO - Request DELETE to http://localhost:8080/api/jobs/64
+2024-08-23 14:07:31,121 - INFO - Response Status Code: 204
+2024-08-23 14:07:31,121 - WARNING - Response is not in valid JSON format or is empty.
+2024-08-23 14:07:31,122 - INFO - Response Body:
+
+
+2024-08-23 14:07:31,122 - INFO - ======================================================================
+2024-08-23 14:07:31,122 - INFO - Deleted job with ID: 64
+2024-08-23 14:07:31,129 - INFO - 
+======================================================================
+2024-08-23 14:07:31,129 - INFO - Request DELETE to http://localhost:8080/api/jobs/65
+2024-08-23 14:07:31,129 - INFO - Response Status Code: 204
+2024-08-23 14:07:31,130 - WARNING - Response is not in valid JSON format or is empty.
+2024-08-23 14:07:31,130 - INFO - Response Body:
+
+
+2024-08-23 14:07:31,130 - INFO - ======================================================================
+2024-08-23 14:07:31,131 - INFO - Deleted job with ID: 65
+2024-08-23 14:07:31,136 - INFO - 
+======================================================================
+2024-08-23 14:07:31,137 - INFO - Request DELETE to http://localhost:8080/api/jobs/67
+2024-08-23 14:07:31,137 - INFO - Response Status Code: 204
+2024-08-23 14:07:31,138 - WARNING - Response is not in valid JSON format or is empty.
+2024-08-23 14:07:31,138 - INFO - Response Body:
+
+
+2024-08-23 14:07:31,138 - INFO - ======================================================================
+2024-08-23 14:07:31,139 - INFO - Deleted job with ID: 67
+2024-08-23 14:07:31,145 - INFO - 
+======================================================================
+2024-08-23 14:07:31,146 - INFO - Request DELETE to http://localhost:8080/api/jobs/68
+2024-08-23 14:07:31,146 - INFO - Response Status Code: 204
+2024-08-23 14:07:31,146 - WARNING - Response is not in valid JSON format or is empty.
+2024-08-23 14:07:31,147 - INFO - Response Body:
+
+
+2024-08-23 14:07:31,147 - INFO - ======================================================================
+2024-08-23 14:07:31,147 - INFO - Deleted job with ID: 68
+2024-08-23 14:07:31,153 - INFO - 
+======================================================================
+2024-08-23 14:07:31,154 - INFO - Request DELETE to http://localhost:8080/api/jobs/69
+2024-08-23 14:07:31,154 - INFO - Response Status Code: 204
+2024-08-23 14:07:31,154 - WARNING - Response is not in valid JSON format or is empty.
+2024-08-23 14:07:31,155 - INFO - Response Body:
+
+
+2024-08-23 14:07:31,155 - INFO - ======================================================================
+2024-08-23 14:07:31,155 - INFO - Deleted job with ID: 69
+2024-08-23 14:07:31,161 - INFO - 
+======================================================================
+2024-08-23 14:07:31,162 - INFO - Request DELETE to http://localhost:8080/api/jobs/71
+2024-08-23 14:07:31,162 - INFO - Response Status Code: 204
+2024-08-23 14:07:31,163 - WARNING - Response is not in valid JSON format or is empty.
+2024-08-23 14:07:31,163 - INFO - Response Body:
+
+
+2024-08-23 14:07:31,163 - INFO - ======================================================================
+2024-08-23 14:07:31,163 - INFO - Deleted job with ID: 71
+2024-08-23 14:07:31,170 - INFO - 
+======================================================================
+2024-08-23 14:07:31,170 - INFO - Request DELETE to http://localhost:8080/api/jobs/72
+2024-08-23 14:07:31,171 - INFO - Response Status Code: 204
+2024-08-23 14:07:31,171 - WARNING - Response is not in valid JSON format or is empty.
+2024-08-23 14:07:31,171 - INFO - Response Body:
+
+
+2024-08-23 14:07:31,171 - INFO - ======================================================================
+2024-08-23 14:07:31,172 - INFO - Deleted job with ID: 72
+2024-08-23 14:07:31,178 - INFO - 
+======================================================================
+2024-08-23 14:07:31,179 - INFO - Request DELETE to http://localhost:8080/api/jobs/73
+2024-08-23 14:07:31,179 - INFO - Response Status Code: 204
+2024-08-23 14:07:31,179 - WARNING - Response is not in valid JSON format or is empty.
+2024-08-23 14:07:31,180 - INFO - Response Body:
+
+
+2024-08-23 14:07:31,180 - INFO - ======================================================================
+2024-08-23 14:07:31,180 - INFO - Deleted job with ID: 73
+2024-08-23 14:07:31,187 - INFO - 
+======================================================================
+2024-08-23 14:07:31,187 - INFO - Request DELETE to http://localhost:8080/api/jobs/75
+2024-08-23 14:07:31,188 - INFO - Response Status Code: 204
+2024-08-23 14:07:31,188 - WARNING - Response is not in valid JSON format or is empty.
+2024-08-23 14:07:31,188 - INFO - Response Body:
+
+
+2024-08-23 14:07:31,189 - INFO - ======================================================================
+2024-08-23 14:07:31,189 - INFO - Deleted job with ID: 75
+2024-08-23 14:07:31,195 - INFO - 
+======================================================================
+2024-08-23 14:07:31,195 - INFO - Request DELETE to http://localhost:8080/api/jobs/76
+2024-08-23 14:07:31,196 - INFO - Response Status Code: 204
+2024-08-23 14:07:31,196 - WARNING - Response is not in valid JSON format or is empty.
+2024-08-23 14:07:31,196 - INFO - Response Body:
+
+
+2024-08-23 14:07:31,197 - INFO - ======================================================================
+2024-08-23 14:07:31,197 - INFO - Deleted job with ID: 76
+2024-08-23 14:07:31,204 - INFO - 
+======================================================================
+2024-08-23 14:07:31,204 - INFO - Request DELETE to http://localhost:8080/api/jobs/77
+2024-08-23 14:07:31,204 - INFO - Response Status Code: 204
+2024-08-23 14:07:31,205 - WARNING - Response is not in valid JSON format or is empty.
+2024-08-23 14:07:31,205 - INFO - Response Body:
+
+
+2024-08-23 14:07:31,205 - INFO - ======================================================================
+2024-08-23 14:07:31,206 - INFO - Deleted job with ID: 77
+2024-08-23 14:07:31,211 - INFO - 
+======================================================================
+2024-08-23 14:07:31,212 - INFO - Request DELETE to http://localhost:8080/api/jobs/78
+2024-08-23 14:07:31,212 - INFO - Response Status Code: 204
+2024-08-23 14:07:31,212 - WARNING - Response is not in valid JSON format or is empty.
+2024-08-23 14:07:31,213 - INFO - Response Body:
+
+
+2024-08-23 14:07:31,213 - INFO - ======================================================================
+2024-08-23 14:07:31,213 - INFO - Deleted job with ID: 78
+2024-08-23 14:07:31,380 - INFO - Attempting to delete all jobs...
+2024-08-23 14:07:31,392 - INFO - 
+======================================================================
+2024-08-23 14:07:31,394 - INFO - Request GET to http://localhost:8080/api/jobs
+2024-08-23 14:07:31,395 - INFO - Response Status Code: 200
+2024-08-23 14:07:31,397 - INFO - Response Body:
+[]
+
+2024-08-23 14:07:31,399 - INFO - ======================================================================
+2024-08-23 14:07:31,413 - INFO - 
+======================================================================
+2024-08-23 14:07:31,415 - INFO - Request GET to http://localhost:8080/api/jobs
+2024-08-23 14:07:31,417 - INFO - Response Status Code: 200
+2024-08-23 14:07:31,418 - INFO - Response Body:
+[]
+
+2024-08-23 14:07:31,420 - INFO - ======================================================================
+2024-08-23 14:07:31,421 - INFO - 
+-----------------------------------------------------------------
+2024-08-23 14:07:31,423 - INFO - Test: test_get_all_jobs(), [92m***PASSED***[0m
+2024-08-23 14:07:31,424 - INFO - -----------------------------------------------------------------
+2024-08-23 14:07:31,433 - INFO - 
+======================================================================
+2024-08-23 14:07:31,436 - INFO - Request POST to http://localhost:8080/api/jobs
+2024-08-23 14:07:31,437 - INFO - Request Body:
+{"jobName": "Test Job", "jobType": "Build", "status": "PENDING"}
+
+2024-08-23 14:07:31,439 - INFO - Response Status Code: 201
+2024-08-23 14:07:31,440 - INFO - Response Body:
+{
+    "id": 80,
+    "jobName": "Test Job",
+    "status": "PENDING",
+    "createdAt": "2024-08-23T14:07:31.4308599",
+    "updatedAt": "2024-08-23T14:07:31.4308599",
+    "jobType": "Build"
+}
+
+2024-08-23 14:07:31,442 - INFO - ======================================================================
+2024-08-23 14:07:31,449 - INFO - 
+======================================================================
+2024-08-23 14:07:31,451 - INFO - Request GET to http://localhost:8080/api/jobs/80
+2024-08-23 14:07:31,452 - INFO - Response Status Code: 200
+2024-08-23 14:07:31,454 - INFO - Response Body:
+{
+    "id": 80,
+    "jobName": "Test Job",
+    "status": "PENDING",
+    "createdAt": "2024-08-23T14:07:31.43086",
+    "updatedAt": "2024-08-23T14:07:31.43086",
+    "jobType": "Build"
+}
+
+2024-08-23 14:07:31,455 - INFO - ======================================================================
+2024-08-23 14:07:31,456 - INFO - 
+-----------------------------------------------------------------
+2024-08-23 14:07:31,458 - INFO - Test: test_get_job_by_id(), [92m***PASSED***[0m
+2024-08-23 14:07:31,459 - INFO - -----------------------------------------------------------------
+2024-08-23 14:07:31,468 - INFO - 
+======================================================================
+2024-08-23 14:07:31,470 - INFO - Request POST to http://localhost:8080/api/jobs
+2024-08-23 14:07:31,471 - INFO - Request Body:
+{"jobName": "Another Test Job", "jobType": "Deployment", "status": "PENDING"}
+
+2024-08-23 14:07:31,472 - INFO - Response Status Code: 201
+2024-08-23 14:07:31,474 - INFO - Response Body:
+{
+    "id": 81,
+    "jobName": "Another Test Job",
+    "status": "PENDING",
+    "createdAt": "2024-08-23T14:07:31.4667289",
+    "updatedAt": "2024-08-23T14:07:31.4667289",
+    "jobType": "Deployment"
+}
+
+2024-08-23 14:07:31,475 - INFO - ======================================================================
+2024-08-23 14:07:31,477 - INFO - 
+-----------------------------------------------------------------
+2024-08-23 14:07:31,478 - INFO - Test: test_create_job(), [92m***PASSED***[0m
+2024-08-23 14:07:31,480 - INFO - -----------------------------------------------------------------
+2024-08-23 14:07:31,488 - INFO - 
+======================================================================
+2024-08-23 14:07:31,490 - INFO - Request POST to http://localhost:8080/api/jobs
+2024-08-23 14:07:31,491 - INFO - Request Body:
+{"jobName": "Test Job", "jobType": "Build", "status": "PENDING"}
+
+2024-08-23 14:07:31,493 - INFO - Response Status Code: 201
+2024-08-23 14:07:31,494 - INFO - Response Body:
+{
+    "id": 82,
+    "jobName": "Test Job",
+    "status": "PENDING",
+    "createdAt": "2024-08-23T14:07:31.4866761",
+    "updatedAt": "2024-08-23T14:07:31.4866761",
+    "jobType": "Build"
+}
+
+2024-08-23 14:07:31,496 - INFO - ======================================================================
+2024-08-23 14:07:31,504 - INFO - 
+======================================================================
+2024-08-23 14:07:31,506 - INFO - Request PUT to http://localhost:8080/api/jobs/82
+2024-08-23 14:07:31,507 - INFO - Request Body:
+{"jobName": "Test Job", "jobType": "Build", "status": "Running"}
+
+2024-08-23 14:07:31,508 - INFO - Response Status Code: 200
+2024-08-23 14:07:31,510 - INFO - Response Body:
+{
+    "id": 82,
+    "jobName": "Test Job",
+    "status": "Running",
+    "createdAt": "2024-08-23T14:07:31.486676",
+    "updatedAt": "2024-08-23T14:07:31.502635",
+    "jobType": "Build"
+}
+
+2024-08-23 14:07:31,511 - INFO - ======================================================================
+2024-08-23 14:07:31,513 - INFO - 
+-----------------------------------------------------------------
+2024-08-23 14:07:31,514 - INFO - Test: test_update_job(), [92m***PASSED***[0m
+2024-08-23 14:07:31,515 - INFO - -----------------------------------------------------------------
+2024-08-23 14:07:31,524 - INFO - 
+======================================================================
+2024-08-23 14:07:31,525 - INFO - Request POST to http://localhost:8080/api/jobs
+2024-08-23 14:07:31,527 - INFO - Request Body:
+{"jobName": "Test Job", "jobType": "Build", "status": "PENDING"}
+
+2024-08-23 14:07:31,528 - INFO - Response Status Code: 201
+2024-08-23 14:07:31,530 - INFO - Response Body:
+{
+    "id": 83,
+    "jobName": "Test Job",
+    "status": "PENDING",
+    "createdAt": "2024-08-23T14:07:31.5225809",
+    "updatedAt": "2024-08-23T14:07:31.5225809",
+    "jobType": "Build"
+}
+
+2024-08-23 14:07:31,531 - INFO - ======================================================================
+2024-08-23 14:07:31,539 - INFO - 
+======================================================================
+2024-08-23 14:07:31,541 - INFO - Request DELETE to http://localhost:8080/api/jobs/83
+2024-08-23 14:07:31,543 - INFO - Response Status Code: 204
+2024-08-23 14:07:31,545 - WARNING - Response is not in valid JSON format or is empty.
+2024-08-23 14:07:31,550 - INFO - Response Body:
+
+
+2024-08-23 14:07:31,554 - INFO - ======================================================================
+2024-08-23 14:07:31,563 - INFO - 
+======================================================================
+2024-08-23 14:07:31,565 - INFO - Request GET to http://localhost:8080/api/jobs/83
+2024-08-23 14:07:31,566 - INFO - Response Status Code: 404
+2024-08-23 14:07:31,567 - WARNING - Response is not in valid JSON format or is empty.
+2024-08-23 14:07:31,570 - INFO - Response Body:
+
+
+2024-08-23 14:07:31,572 - INFO - ======================================================================
+2024-08-23 14:07:31,574 - INFO - 
+-----------------------------------------------------------------
+2024-08-23 14:07:31,576 - INFO - Test: test_delete_job(), [92m***PASSED***[0m
+2024-08-23 14:07:31,579 - INFO - -----------------------------------------------------------------

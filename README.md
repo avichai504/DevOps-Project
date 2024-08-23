@@ -20,6 +20,7 @@ final-project/
 │   │   │           │   ├── CICDJob.java
 │   │   │           │   ├── CICDJobController.java
 │   │   │           │   ├── CICDJobService.java
+│   │   │           │   ├── JobNotFoundException.java   # Exception that returns 404 NOT FOUND for missing jobs 
 │   │   │           ├── config/        # Configuration files
 │   │   │           │   └── DatabaseSeeder.java
 │   │   └── resources/
@@ -30,6 +31,7 @@ final-project/
 ├── test/
 │   ├── python/
 │   │   └── test_cicd_jobs.py           # Python testing scripts
+|   |   └── log/                        # Directory for storing log files
 │
 ├── docker/
 │   ├── Dockerfile                      # Dockerfile for building the application image
