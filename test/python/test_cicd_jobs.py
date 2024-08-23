@@ -29,7 +29,7 @@ logging.getLogger().addHandler(console_handler)
 # CI/CD Server Base URL
 BASE_URL = "http://localhost:8080/api"
 
-# Function to log requests
+# Function to log HTTP requests 
 def log_request(response):
     logger.info("\n" + "=" * 70)
     logger.info(f"Request {response.request.method} to {response.request.url}")
@@ -48,13 +48,23 @@ def log_request(response):
 
     logger.info("=" * 70)
 
-# Function to log test results
+# Function to log test results 
 def log_test_result(test_name, status):
     result_message = "***PASSED***" if status == "passed" else "***FAILED***"
     status_color = "\033[92m" if status == "passed" else "\033[91m"
     logger.info("\n" + "-" * 65)
     logger.info(f"Test: {test_name}(), {status_color}{result_message}\033[0m")
     logger.info("-" * 65)
+
+# Function to log HTTP responses (Part 2, point 3)
+def log_response(response):
+    logger.info(f"Response Status Code: {response.status_code}")
+    try:
+        response_body = response.json()
+        logger.info(f"Response Body:\n{json.dumps(response_body, indent=4)}\n")
+    except json.JSONDecodeError:
+        logger.warning("Response is not in valid JSON format or is empty.")
+        logger.info(f"Response Body:\n{response.text}\n")
 
 # Function to delete all jobs
 def delete_all_jobs():
@@ -70,7 +80,7 @@ def delete_all_jobs():
                 for job in jobs:
                     job_id = job['id']
                     delete_response = requests.delete(f"{BASE_URL}/jobs/{job_id}")
-                    log_request(delete_response)
+                    log_response(delete_response)  # Use log_response here
                     logger.info(f"Deleted job with ID: {job_id}")
             else:
                 logger.warning("Failed to retrieve jobs for deletion. Status Code: %d", response.status_code)
@@ -80,9 +90,10 @@ def delete_all_jobs():
     else:
         logger.info("Global flag DELETE_ALL_JOBS is set to False. No jobs will be deleted.")
 
-# Define a fixture to create a new job before testing
-@pytest.fixture
+# Define a fixture to create a new job before testing (Part 2, point 4)
+@pytest.fixture(scope='module')  # Define scope as 'module' 
 def create_job():
+    logger.info("Setting up a new job for tests...")  # Log setup action
     job_data = {
         "jobName": "Test Job",
         "jobType": "Build",
@@ -92,9 +103,16 @@ def create_job():
     log_request(response)
     assert response.status_code == 201, "Job creation failed."
     job_id = response.json()["id"]
-    return job_id
+    yield job_id  # Yield the job ID to the test functions
+    logger.info("Tearing down the job after tests...")  # Log teardown action
+
+    # Now delete the job to clean up (optional)
+    delete_response = requests.delete(f"{BASE_URL}/jobs/{job_id}")
+    log_response(delete_response)
+    logger.info(f"Deleted test job with ID: {job_id}")
 
 # Enhanced Test Functions
+
 def test_get_all_jobs():
     test_name = "test_get_all_jobs"
     try:
@@ -108,12 +126,11 @@ def test_get_all_jobs():
 
 def test_get_job_by_id(create_job):
     test_name = "test_get_job_by_id"
-    job_id = create_job
     try:
-        response = requests.get(f"{BASE_URL}/jobs/{job_id}")
+        response = requests.get(f"{BASE_URL}/jobs/{create_job}")
         log_request(response)
-        assert response.status_code == 200, f"Failed to get job with ID {job_id}."
-        assert response.json()["id"] == job_id, "Incorrect job ID."
+        assert response.status_code == 200, f"Failed to get job with ID {create_job}."
+        assert response.json()["id"] == create_job, "Incorrect job ID."
         log_test_result(test_name, "passed")
     except AssertionError:
         log_test_result(test_name, "failed")
@@ -136,16 +153,15 @@ def test_create_job():
 
 def test_update_job(create_job):
     test_name = "test_update_job"
-    job_id = create_job
     try:
         update_data = {
             "jobName": "Test Job", 
             "jobType": "Build",
             "status": "Running"
         }
-        response = requests.put(f"{BASE_URL}/jobs/{job_id}", json=update_data)
+        response = requests.put(f"{BASE_URL}/jobs/{create_job}", json=update_data)
         log_request(response)
-        assert response.status_code == 200, f"Failed to update job with ID {job_id}."
+        assert response.status_code == 200, f"Failed to update job with ID {create_job}."
         assert response.json()["status"] == "Running", "Job status not updated."
         log_test_result(test_name, "passed")
     except AssertionError:
@@ -153,13 +169,12 @@ def test_update_job(create_job):
 
 def test_delete_job(create_job):
     test_name = "test_delete_job"
-    job_id = create_job
     try:
-        response = requests.delete(f"{BASE_URL}/jobs/{job_id}")
-        log_request(response)
-        assert response.status_code == 204, f"Failed to delete job with ID {job_id}."
+        response = requests.delete(f"{BASE_URL}/jobs/{create_job}")
+        log_response(response)  # Log response using log_response function
+        assert response.status_code == 204, f"Failed to delete job with ID {create_job}."
 
-        response = requests.get(f"{BASE_URL}/jobs/{job_id}")
+        response = requests.get(f"{BASE_URL}/jobs/{create_job}")
         log_request(response)
         assert response.status_code == 404, f"Deleted job was still found. Response Body: {response.text}"
         log_test_result(test_name, "passed")
