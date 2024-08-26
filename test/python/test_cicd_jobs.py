@@ -4,9 +4,10 @@ import pytest
 import json
 import datetime
 import os
+import time
 
 # Global variable to control the deletion of all current jobs after test.
-DELETE_ALL_JOBS = False 
+DELETE_ALL_JOBS = False
 
 # Create a log directory if it doesn't exist
 log_directory = os.path.join(os.path.dirname(os.path.abspath(__file__)), "log")
@@ -27,9 +28,13 @@ console_handler.setFormatter(formatter)
 logging.getLogger().addHandler(console_handler)
 
 # CI/CD Server Base URL
-BASE_URL = "http://localhost:8080/api"
+BASE_URL = "http://cd-server:8080/api"
 
-# Function to log HTTP requests 
+# Retry Configuration
+MAX_RETRIES = 5
+RETRY_DELAY = 5  # seconds
+
+# Function to log HTTP requests
 def log_request(response):
     logger.info("\n" + "=" * 70)
     logger.info(f"Request {response.request.method} to {response.request.url}")
@@ -48,7 +53,7 @@ def log_request(response):
 
     logger.info("=" * 70)
 
-# Function to log test results 
+# Function to log test results
 def log_test_result(test_name, status):
     result_message = "***PASSED***" if status == "passed" else "***FAILED***"
     status_color = "\033[92m" if status == "passed" else "\033[91m"
@@ -84,14 +89,14 @@ def delete_all_jobs():
                     logger.info(f"Deleted job with ID: {job_id}")
             else:
                 logger.warning("Failed to retrieve jobs for deletion. Status Code: %d", response.status_code)
-        
+
         except requests.exceptions.RequestException as e:
             logger.error("An error occurred while deleting jobs: %s", e)
     else:
         logger.info("Global flag DELETE_ALL_JOBS is set to False. No jobs will be deleted.")
 
 # Define a fixture to create a new job before testing (Part 2, point 4)
-@pytest.fixture(scope='module')  # Define scope as 'module' 
+@pytest.fixture(scope='module')  # Define scope as 'module'
 def create_job():
     logger.info("Setting up a new job for tests...")  # Log setup action
     job_data = {
@@ -111,12 +116,27 @@ def create_job():
     log_response(delete_response)
     logger.info(f"Deleted test job with ID: {job_id}")
 
+# Function to make a GET request with retries
+def get_with_retries(url):
+    for i in range(MAX_RETRIES):
+        try:
+            response = requests.get(url)
+            if response.status_code == 200:
+                return response
+        except requests.exceptions.ConnectionError:
+            if i < MAX_RETRIES - 1:
+                time.sleep(RETRY_DELAY)
+            else:
+                raise
+    return None
+
 # Enhanced Test Functions
 
 def test_get_all_jobs():
     test_name = "test_get_all_jobs"
     try:
-        response = requests.get(f"{BASE_URL}/jobs")
+        response = get_with_retries(f"{BASE_URL}/jobs")
+        assert response is not None, "Failed to connect to cd-server"
         log_request(response)
         assert response.status_code == 200, "Failed to get all jobs."
         assert isinstance(response.json(), list), "Response is not a list."
@@ -127,7 +147,8 @@ def test_get_all_jobs():
 def test_get_job_by_id(create_job):
     test_name = "test_get_job_by_id"
     try:
-        response = requests.get(f"{BASE_URL}/jobs/{create_job}")
+        response = get_with_retries(f"{BASE_URL}/jobs/{create_job}")
+        assert response is not None, "Failed to connect to cd-server"
         log_request(response)
         assert response.status_code == 200, f"Failed to get job with ID {create_job}."
         assert response.json()["id"] == create_job, "Incorrect job ID."
@@ -155,12 +176,13 @@ def test_update_job(create_job):
     test_name = "test_update_job"
     try:
         update_data = {
-            "jobName": "Test Job", 
+            "jobName": "Test Job",
             "jobType": "Build",
             "status": "Running"
         }
         response = requests.put(f"{BASE_URL}/jobs/{create_job}", json=update_data)
         log_request(response)
+        assert response is not None, "Failed to connect to cd-server"
         assert response.status_code == 200, f"Failed to update job with ID {create_job}."
         assert response.json()["status"] == "Running", "Job status not updated."
         log_test_result(test_name, "passed")
@@ -172,6 +194,7 @@ def test_delete_job(create_job):
     try:
         response = requests.delete(f"{BASE_URL}/jobs/{create_job}")
         log_response(response)  # Log response using log_response function
+        assert response is not None, "Failed to connect to cd-server"
         assert response.status_code == 204, f"Failed to delete job with ID {create_job}."
 
         response = requests.get(f"{BASE_URL}/jobs/{create_job}")
